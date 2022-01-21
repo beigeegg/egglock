@@ -1,0 +1,8 @@
+# 클라이언트 깃 푸쉬 무시
+/client/node_modules/*
+/client/build/*
+
+
+
+# 서버 깃 푸쉬 무시
+/server/node_modules/*
