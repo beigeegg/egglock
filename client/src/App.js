@@ -1,7 +1,10 @@
+import { Layout } from './layouts/'
+import './assets/css/reset.css';
+
 const App = () => {
   return (
     <div className="App">
-      <h1>헬로우 월드</h1>
+      <Layout />
     </div>
   );
 }
