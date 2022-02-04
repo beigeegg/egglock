@@ -8,8 +8,16 @@ const Clock = () => {
         <rect width="1728" height="1117" fill="#E5E5E5" />
         <rect width="1728" height="1117" fill="white" />
         <rect x="489" y="184" width="750" height="750" fill="#C4C4C4" />
-        <circle cx="864" cy="559" r="300" fill="#CA3E3E" />
-        <ellipse cx="864" cy="559" rx="300" ry="300" fill="white" />
+        <circle
+          cx="864"
+          cy="559"
+          r="1"
+          fill="#CA3E3E"
+          stroke="blue"
+          stroke-width="200"
+          stroke-dasharray="300 300"
+        />
+        {/* <ellipse cx="864" cy="559" rx="300" ry="300" fill="white" /> */}
       </svg>
     </div>
   );
