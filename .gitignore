@@ -1,3 +1,6 @@
+#글로벌
+node_modules
+
 # 클라이언트 깃 푸쉬 무시
 /client/node_modules/*
 /client/build/*
