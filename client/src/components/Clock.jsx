@@ -1,24 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { clockStyle } from './';
 
 const Clock = () => {
+
+  const [strokeDasharray, setStrokeDasharray] = useState(2 * Math.PI * 20);
+  const [strokeDashoffset, setStrokeDashoffset] = useState(141.372);
+  const [rotate, setRotate] = useState(270);
+  const offset = 2 * Math.PI * 20;
+
+  const handleStrokeDasharray = (e) => {
+    setStrokeDasharray(e.target.value);
+  }
+  const handleStrokeDashoffset = (e) => {
+    setStrokeDashoffset(e.target.value);
+  }
+  const handleRotate = (e) => {
+    setRotate(e.target.value);
+  }
+
+
   return (
-    <div>
-      <svg xmlns="http://www.w3.org/2000/svg" width="1728" height="1117" viewBox="0 0 1728 1117" fill="none" className="">
-        <rect width="1728" height="1117" fill="#E5E5E5" />
-        <rect width="1728" height="1117" fill="white" />
-        <rect x="489" y="184" width="750" height="750" fill="#C4C4C4" />
-        <circle
-          cx="864"
-          cy="559"
-          r="1"
-          fill="#CA3E3E"
-          stroke="blue"
-          stroke-width="200"
-          stroke-dasharray="300 300"
-        />
-        {/* <ellipse cx="864" cy="559" rx="300" ry="300" fill="white" /> */}
+    <div className={clockStyle.clockDoc}>
+      <svg width="20%" height="20%" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="20" stroke="red" strokeWidth="30" fill="transparent" strokeDasharray={strokeDasharray} strokeDashoffset={strokeDashoffset} transform={`rotate(${rotate} 50 50)`} />
       </svg>
+      <div>
+        <input type="range" name="strokeDasharray"
+          min="0" max="360" onChange={handleStrokeDasharray} />
+        <label htmlFor="strokeDasharray">strokeDasharray : {strokeDasharray}</label>
+      </div>
+      <div>
+        <input type="range" id="strokeDashoffset" name="strokeDashoffset"
+          min="0" max={2 * Math.PI * 20} step="0.001" onChange={handleStrokeDashoffset} />
+        <label htmlFor="strokeDashoffset">strokeDashoffset : {strokeDashoffset} , {offset}</label>
+      </div>
+      <div>
+        <input type="range" id="rotate" name="rotate"
+          min="-90" max="360" onChange={handleRotate} />
+        <label htmlFor="rotate">rotate : {rotate}</label>
+      </div>
     </div>
   );
 };
