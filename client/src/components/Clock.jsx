@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { clockStyle } from './';
 
 const Clock = () => {
 
   const [strokeDasharray, setStrokeDasharray] = useState(2 * Math.PI * 20);
-  const [strokeDashoffset, setStrokeDashoffset] = useState(141.372);
+  const [strokeDashoffset, setStrokeDashoffset] = useState(0);
   const [rotate, setRotate] = useState(270);
   const offset = 2 * Math.PI * 20;
 
@@ -14,9 +14,21 @@ const Clock = () => {
   const handleStrokeDashoffset = (e) => {
     setStrokeDashoffset(e.target.value);
   }
-  const handleRotate = (e) => {
-    setRotate(e.target.value);
+
+  const handleTimerControl = () => {
+    const min = 60;
+    const _offset = 2 * Math.PI * 20;
+    const plus = _offset / min
+    let count = 0;
+    const timerId = setInterval(() => {
+      count = count + plus;
+      setStrokeDashoffset(count);
+    }, 1000);
   }
+
+  // useEffect(() => {
+
+  // }, [])
 
 
   return (
@@ -34,11 +46,7 @@ const Clock = () => {
           min="0" max={2 * Math.PI * 20} step="0.001" onChange={handleStrokeDashoffset} />
         <label htmlFor="strokeDashoffset">strokeDashoffset : {strokeDashoffset} , {offset}</label>
       </div>
-      <div>
-        <input type="range" id="rotate" name="rotate"
-          min="-90" max="360" onChange={handleRotate} />
-        <label htmlFor="rotate">rotate : {rotate}</label>
-      </div>
+      <button onClick={handleTimerControl}>스타트</button>
     </div>
   );
 };
