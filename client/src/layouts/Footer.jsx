@@ -5,7 +5,10 @@ const Footer = () => {
   return (
     <footer className={footerStyle.footer}>
       <div className={footerStyle.inner_footer}>
-        <h1>풋터영역입니다.</h1>
+      <h1 className={footerStyle.footText}>
+        © beigeegg</h1>
+      <h1 className={footerStyle.footText}>
+        © 2022 beigeegg, korea.</h1>
       </div>
     </footer>
   );
