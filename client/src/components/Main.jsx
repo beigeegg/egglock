@@ -3,10 +3,8 @@ import { Clock, mainStyle } from './';
 
 const Main = () => {
   return (
-    <main className='doc-main'>
-      <div className="clockborad">
-        <Clock />
-      </div>
+    <main className={mainStyle.doc_main}>
+      <Clock />
     </main>
   );
 };

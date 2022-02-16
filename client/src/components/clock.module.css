@@ -1,3 +1,36 @@
-.clockDoc {
-  margin: 200px 0;
+.doc_clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  /* margin: 100px auto; */
+}
+.inner_clock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 1000px;
+}
+.clock_ui {
+  display: flex;
+  width: 500px;
+  height: 500px;
+  border: 1px solid black;
+  background: rgb(23, 81, 129);
+  justify-content: center;
+  align-items: center;
+}
+.clock_svg {
+  width: 400px;
+  height: 400px;
+}
+.test_console {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+}
+.test_console > label {
+  width: 500px;
 }
