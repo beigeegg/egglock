@@ -34,7 +34,7 @@ const Clock = () => {
     clearInterval(timerId);
     setStrokeDashoffset(0);
   }
-  // console.log(minUIoffset);
+  console.log(minUIoffset);
 
   return (
     <div className={clockStyle.doc_clock}>
